@@ -1,17 +1,19 @@
 import React, { Component } from 'react';
 import IndexInput from './IndexInput';
+import FileStructure from './FileStructure'
 
 class App extends Component {
   static defaultProps = {
     indexv: 0,
-    indexh: 0
+    indexh: 0,
+    fileList: []
   }
 
   constructor(props) {
     super(props);
     this.state = {
       indexv: props.indexv,
-      indexh: props.indexh
+      indexh: props.indexh,
     };
 
     this.handleChange = this.handleChange.bind(this);
@@ -35,8 +37,7 @@ class App extends Component {
           index={this.state.indexh} 
           handleChange={this.handleChange} />
 
-        <p>indexv: {this.state.indexv}</p>
-        <p>indexh: {this.state.indexh}</p>
+        <FileStructure fileList={this.props.fileList} />
       </div>
     );
   }
