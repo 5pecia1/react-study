@@ -1,10 +1,12 @@
 import React, { Component } from 'react';
+import IndexInput from './IndexInput';
 
 class App extends Component {
   static defaultProps = {
     indexv: 0,
     indexh: 0
   }
+
   constructor(props) {
     super(props);
     this.state = {
@@ -12,20 +14,27 @@ class App extends Component {
       indexh: props.indexh
     };
 
-    this.handleChangeV = this.handleChangeV.bind(this);
+    this.handleChange = this.handleChange.bind(this);
   }
 
-  handleChangeV(e) {
+  handleChange(p) {
     this.setState({
-      indexv: e.target.value
+      [p.name]: p.index
     });
   }
 
   render() {
     return (
       <div>
-        <input value={this.state.indexv} onChange={this.handleChangeV}/>
-        <input value={this.state.indexh} />
+        <IndexInput 
+          name='indexv' 
+          index={this.state.indexv} 
+          handleChange={this.handleChange} />
+        <IndexInput 
+          name='indexh' 
+          index={this.state.indexh} 
+          handleChange={this.handleChange} />
+
         <p>indexv: {this.state.indexv}</p>
         <p>indexh: {this.state.indexh}</p>
       </div>
