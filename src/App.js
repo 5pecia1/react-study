@@ -6,7 +6,8 @@ class App extends Component {
   static defaultProps = {
     indexv: 0,
     indexh: 0,
-    fileList: []
+    fileList: [],
+    indexingNumber: {}
   }
 
   constructor(props) {
@@ -37,7 +38,11 @@ class App extends Component {
           index={this.state.indexh} 
           handleChange={this.handleChange} />
 
-        <FileStructure fileList={this.props.fileList} />
+        <FileStructure 
+          fileList={this.props.fileList} 
+          indexingNumber={this.props.indexingNumber}
+          indexv={this.state.indexv} 
+          indexh={this.state.indexh}/>
       </div>
     );
   }
