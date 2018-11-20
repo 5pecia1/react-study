@@ -27,6 +27,7 @@ class App extends Component {
   }
 
   render() {
+    console.return
     return (
       <div>
         <IndexInput 
