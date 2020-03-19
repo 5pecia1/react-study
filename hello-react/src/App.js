@@ -1,7 +1,7 @@
 import React from 'react';
 import './App.css';
-import Say from './Say';
+import EventPractice from './EventPractice'
 
-const App = () => <Say />
+const App = () => <EventPractice />
 
 export default App;
