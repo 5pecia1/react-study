@@ -1,54 +1,42 @@
-import React, { Component } from 'react';
+import React, { useState } from 'react';
 
-class EventPractice extends Component {
-    state = {
-        username: '',
-        message: ''
-    }
-
-    handleChagne = e => {
-        this.setState({
-            [e.target.name]: e.target.value
-        });
-    }
-
-    handleClick = () => {
-        alert(`${this.state.username}: ${this.state.message}`);
-        this.setState({
-            username: '',
-            message: ''
-        });
-    }
-
-    handleKeyPress = (e) =>{
+const EventPractice = () => {
+    const [username, setUsername] = useState('');
+    const [message, setMessage] = useState('');
+    const onChangeUsername = e => setUsername(e.target.value);
+    const onChangeMesage = e => setMessage(e.target.value);
+    const onClick = () => {
+        alert(`${username}: ${message}`);
+        setUsername('');
+        setMessage('');
+    };
+    const onKeyPress = e => {
         if (e.key === 'Enter') {
-            this.handleClick();
+            onClick();
         }
-    }
+    };
 
-    render() {
-        return (
+    return (
             <div>
                 <h1>evnet test</h1>
                 <input
                     type="text"
                     name="username"
                     placeholder="input anything"
-                    value={this.state.username}
-                    onChange={this.handleChagne}
+                    value={username}
+                    onChange={onChangeUsername}
                 />
                 <input
                     type="text"
                     name="message"
                     placeholder="input anything"
-                    value={this.state.message}
-                    onChange={this.handleChagne}
-                    onKeyPress={this.handleKeyPress}
+                    value={message}
+                    onChange={onChangeMesage}
+                    onKeyPress={onKeyPress}
                 />
-                <button onClick={this.handleClick}>확인</button>
+                <button onClick={onClick}>확인</button>
             </div>
-        )
-    }
-}
+    );
+};
 
 export default EventPractice;
