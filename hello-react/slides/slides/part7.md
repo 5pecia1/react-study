@@ -15,7 +15,7 @@
 DOM이 생성되고 웹 브라우저상에 나타나는 것  
 
 컴포넌트 만들기 → contructor → getDerivedStateFromProps  
-→ rdner → componentDidMount  
+→ render → componentDidMount  
 
 
 ### Mount
@@ -26,7 +26,7 @@ DOM이 생성되고 웹 브라우저상에 나타나는 것
 * **getDerivedStateFromProps**  
 props에 있는 값을 state에 넣을 때 사용
 
-* **redner**  
+* **render**  
 UI랜더링
 
 * **componentDidMount**  
@@ -35,10 +35,10 @@ UI랜더링
 
 ### Update
 
-\[props 변경 | state 변경 | 부모 컴폰너트 리렌더링\]  
+\[props 변경 | state 변경 | 부모 컴포넌트 리렌더링\]  
 → getDerivedStateFromProps  
 → shouldComponentUpdate  
-→ (true 반환 시 redner 호출,  
+→ (true 반환 시 render 호출,  
 false 반환시 여기서 작업 취소)  
 → render  
 → getSnapshotBeforeUpdate  
@@ -89,13 +89,13 @@ props의 변화에 따라 state 값 변화 주고 싶을 때 사용
 ### constructor(props)
 
 * 생성자
-* 초기 state 값 설정
+* 초기 state 값 설정ㄴ
 
 
 ### getDerivedStateFromProps()
 
 * v16.3이후에 만들어짐
-* props로 받아온 값을 state에 동기화 시크는 용도
+* props로 받아온 값을 state에 동기화 시키는 용도
 * 컴포넌트 마운트 및 업데이트 때 호출 됨
 
 ```js
@@ -108,12 +108,17 @@ static getDerivedStateFromProps(nextProps, prevState) {
 }
 ```
 
+Note:
+정적 메소드를 사용해서 메소드 외부의 값을 건드리지 못하게 함  
+위험을 줄이기 위한 것  
+https://stackoverflow.com/questions/52886075/why-is-getderivedstatefromprops-is-a-static-method
+
 
 ### componentDidMount()
 
 * 컴포넌트를 만들고 첫 렌더링을 마친 후
 * 비동기 작업 처리
-    * 다른 js라이브러리 또는 프레이웤 함 호출
+    * 다른 js라이브러리 또는 프레이웤 함수 호출
     * 또는 이벤트 등록, setTimeout, setInterval, 네트워크 요청
 
 
@@ -128,8 +133,8 @@ static getDerivedStateFromProps(nextProps, prevState) {
 ### getSnapshotBeforeUpdate(prevProps, prevState)
 
 * v16.3+
-* reder로 만들어 진 결과물이 브라우저에 실제로 반영 되기 전 호출
-* 반환값은 `componentDidMount`의 세번째 파ㅏㄹ매터로 받음
+* render로 만들어 진 결과물이 브라우저에 실제로 반영 되기 전 호출
+* 반환값은 `componentDidMount`의 세번째 파라매터로 받음
 * 업데이트 직접 참고값 관리용(ex. 스크롤바 위치)
 
 
