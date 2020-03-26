@@ -3,6 +3,7 @@ import "./App.css";
 // import EventPractice from './EventPractice';
 // import RefSample from './RefSample';
 import LifeCycleSample from "./LifeCycleSample";
+import ErrorBoundary from "./ErrorBoundary";
 
 function getRandomColor() {
   return `#${Math.floor(Math.random() * 16777215).toString(16)}`;
@@ -18,7 +19,9 @@ const App = () => {
   return (
     <div>
       <button onClick={handleClick}>Random Color!</button>
-      <LifeCycleSample color={color} />
+      <ErrorBoundary>
+        <LifeCycleSample color={color} />
+      </ErrorBoundary>
     </div>
   );
 };

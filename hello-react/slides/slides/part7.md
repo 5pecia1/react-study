@@ -160,3 +160,7 @@ static getDerivedStateFromProps(nextProps, prevState) {
 ## 사용하기
 
 
+
+## Error 발생
+
+![](../imaegs/react-error.png)
