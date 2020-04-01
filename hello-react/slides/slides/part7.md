@@ -134,11 +134,11 @@ https://stackoverflow.com/questions/52886075/why-is-getderivedstatefromprops-is-
 
 * v16.3+
 * render로 만들어 진 결과물이 브라우저에 실제로 반영 되기 전 호출
-* 반환값은 `componentDidMount`의 세번째 파라매터로 받음
+* 반환값은 `componentDidMountUpdate`의 세번째 파라매터로 받음
 * 업데이트 직접 참고값 관리용(ex. 스크롤바 위치)
 
 
-### componentDidMount(prevProps, prevState, snapshot)
+### componentDidMountUpdate(prevProps, prevState, snapshot)
 
 * 리렌더링 완료 후 실행
 * DOM 관련 처리 무방
