@@ -1,0 +1,10 @@
+//variable
+$red: #fa5252;
+$orange: orange;
+
+//like function
+@mixin square($size) {
+  $calculated: 32px * $size;
+  width: $calculated;
+  height: $calculated;
+}
