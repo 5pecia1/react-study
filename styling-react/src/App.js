@@ -1,12 +1,13 @@
 import React from 'react';
 import logo from './logo.svg';
 import './App.css';
-import SassComponent from './SassComponent';
+import CSSModule from './CSSModule';
+// import SassComponent from './SassComponent';
 
 function App() {
   return (
     <dev>
-      <SassComponent />
+      <CSSModule />
     </dev>
   );
 }
