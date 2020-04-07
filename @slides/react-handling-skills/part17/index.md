@@ -80,7 +80,27 @@ Ducks 패턴
 
 ### 3. 리액트 애플리케이션에 리덕스 적용
 
+1. `./src/index.js`에서 `store`를 만들어 리덕스 적용
+2. `Provider` 컴포넌트로 감싸기
+3. Redux DevTools 사용
+    1. google chrome에서 Redux DevTools 확장프로그램 설치
+    2. `composeWithDevTools()` 적용
+    3. `yarn add redux-devtools-extension`
+---
+
 ### 4. container component 만들기
+
+`containers/CounterCountainer.jsx`
+* `mapStateToProps(state => {})`: redux store 안의 state를 컴포넌트의 props로 넘김
+* `mapDispatchToPros(dispatch => {})`: action creator를 컴포넌트의 props로 넘김
+* `concet(mapStateToProps, mapDispatchToPros)(연동할 컴포넌트)`:  
+리덕스와 연동된 컴포넌트 생성
+* `bindActionCreators(actionCreators, dispatch)`: dispatch로 감싸는 작업을 쉽게
+* `connect`에서 `mapDispatchToProps`를 함수 형태가 아닌 액션 생성 함수로 이루어진 객체로 넣을 수 있음
+
+---
+
+`containers/TodosContainer.jsx`
 
 ---
 
