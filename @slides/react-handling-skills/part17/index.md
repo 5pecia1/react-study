@@ -105,6 +105,30 @@ Ducks 패턴
 
 ## 리덕스 더 편하게 사용하기
 
+### redux-actions
+
+`./modules`
+* `createAction(payloadCreator)`: action 생성
+* `handleActions(reducer, defaultState)`: reducer 생성
+
+
+---
+
+### immer
+
+---
+
+## Hooks를 사용하여 컨테이너 컴포넌트 만들기
+
+---
+
+### useSelector
+
+### useDispatch
+
+### useStore
+
+### useActions
 ---
 
 ## Mad Talk
