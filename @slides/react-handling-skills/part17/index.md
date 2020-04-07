@@ -98,9 +98,8 @@ Ducks 패턴
 * `bindActionCreators(actionCreators, dispatch)`: dispatch로 감싸는 작업을 쉽게
 * `connect`에서 `mapDispatchToProps`를 함수 형태가 아닌 액션 생성 함수로 이루어진 객체로 넣을 수 있음
 
----
-
-`containers/TodosContainer.jsx`
+`containers/TodosContainer.jsx`, `components/Todos.jsx` 구현
+* `git checkout 6625e18`
 
 ---
 
