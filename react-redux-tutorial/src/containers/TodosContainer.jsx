@@ -47,4 +47,6 @@ const TodosContainer = () => {
 //         remove,
 //     }
 // )(TodosContainer);
+
 export default TodosContainer;
+// export default React.memo(TodosContainer);

@@ -105,30 +105,43 @@ Ducks 패턴
 
 ## 리덕스 더 편하게 사용하기
 
+`./modules`
+
 ### redux-actions
 
-`./modules`
+* `yarn add redux-actions`
 * `createAction(payloadCreator)`: action 생성
 * `handleActions(reducer, defaultState)`: reducer 생성
-
-
----
+    * `{ payload: name }`비구조화 문법을 사용
 
 ### immer
+
+* `yarn add immer`
+* 상태의 구조가 깊을 수록 불변성을 지키기 까다롭기 떄문에 편리한 상태 관리를 위해 사용
 
 ---
 
 ## Hooks를 사용하여 컨테이너 컴포넌트 만들기
 
+`connect()`를 사용하는 대신 `react-redux`에서 제공하는 Hooks를 사용할 수 있음
+
+* `useSelector(mapStateToProps)`: state를 획득하는 함수
+* `useDispatch()`: 내부 스토어의 내장 함수 `dispatch()`를 사용할 수 있게 함  
+성능 최적화를 위해 `useCallback()`으로 감싸주는 것 이 좋음
+* `useStore()`:  직접 리덕스 스토어에 접근할 수 있음. 사용하는 상황은 흔치 않음
+    ```jsx
+    const store = useStore();
+    store.dispatch({ type: 'SAMPLE_ACTION' });
+    store.getState();
+    ```
 ---
 
-### useSelector
+### connect 함수와의 주요 차이점
 
-### useDispatch
+* `connect()`: 컨테이너 컴포넌트의 부모 컴포넌트가 리렌더링 될 때 해당 컨테이너 컴포넌트의 props가 바뀌지 않았다면 리렌더링이 자동으로 방지 됨
+* `useSelector()`: 최적화 자동이 자동으로 이루어 지지 않기 떄문에, `React.memo`를 사용해 주아야 함
+    * `TodosContainer`의 부모 컴포넌트가 리렌더링 하지 않기 때문에 불필요한 최적화임
 
-### useStore
-
-### useActions
 ---
 
 ## Mad Talk
