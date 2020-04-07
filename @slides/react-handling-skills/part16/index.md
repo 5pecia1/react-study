@@ -18,7 +18,7 @@ auto-scaling: true
 
 ### action
 
-* 상태에 어떠한 변호가 필요할 경우 **action**이 발행 됨
+* 상태에 어떠한 변화가 필요할 경우 **action**이 발행 됨
 * action은 **type** 필드를 반드시 가지고 있어야 함
     ```js
     {
@@ -88,6 +88,9 @@ function reducer(state = initialState, action) {
 * store의 내장 함수 중 하나
 * 리스너 함수가 action이 dispatch될 때마다 호출됨
 
+---
+
+![](https://www.dotnetcurry.com/images/reactjs/redux/redux.png)
 
 ---
 
@@ -96,10 +99,6 @@ function reducer(state = initialState, action) {
 리덕스는 리액트에 종속되는 라이브러리가 아님
 
 *CODE 확인*
-
----
-
-<!-- TODO: insert redux process images -->
 
 ---
 
