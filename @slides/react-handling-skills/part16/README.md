@@ -100,6 +100,8 @@ function reducer(state = initialState, action) {
 
 *CODE 확인*
 
+`parcel index.html`
+
 ---
 
 ## 리덕스의 세 가지 규칙

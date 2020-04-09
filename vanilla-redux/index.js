@@ -45,6 +45,7 @@ function reducer(state = initialState, action) {
 const store = createStore(reducer);
 
 const render = () => {
+    console.log('render')
     const state = store.getState();
 
     if (state.toggle) {
@@ -64,9 +65,8 @@ const listener = () => {
 }
 
 const unsubscribe = store.subscribe(listener); 
+// unsubscribe();
 
-//TODO: can't unsubscribe
-unsubscribe();
 
 divToggle.onclick = () => {
     store.dispatch(toggleSwith());
